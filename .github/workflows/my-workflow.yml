@@ -1,0 +1,16 @@
+name: my-workflow
+
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: run setup
+        run: make setup
+      - name: run start
+        run: make start
+      - name: run tests
+        run: make test
+      - name: run lint
+        run: make lint
